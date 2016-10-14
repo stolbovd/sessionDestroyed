@@ -1,0 +1,23 @@
+server:
+  port: 8084
+spring:
+  datasource:
+    url: jdbc:h2:mem:restdb
+  data:
+    rest:
+      base-path: /rest/api
+  jpa:
+    show-sql: true
+#  resources:
+#    add-mappings: true # if default mappings should be added
+  thymeleaf:
+    mode: HTML
+    cache: true # set to false for hot refresh
+  session:
+    store-type: redis
+  redis:
+    host: localhost # server host
+    port: 6379 # connection port
+logging:
+  level:
+#    org.hibernate: DEBUG
