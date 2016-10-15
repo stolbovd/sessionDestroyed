@@ -1,8 +1,11 @@
 function AppModel() {
+	var app = this;
 	app.message = ko.observable("");
 	app.send = function () {
 		if (app.message().length > 0) {
-			$.post("/sse", app.message());
+			$.ajax("/sse", {type: "POST", data: app.message(), contentType: "text/plain; charset=UTF-8"}).fail(function (error) {
+				console.log(error);
+			});
 			app.message("");
 		}
 	};

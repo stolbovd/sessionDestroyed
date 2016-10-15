@@ -8,8 +8,8 @@ spring:
       base-path: /rest/api
   jpa:
     show-sql: true
-#  resources:
-#    add-mappings: true # if default mappings should be added
+  resources:
+    add-mappings: true # if default mappings should be added
   thymeleaf:
     mode: HTML
     cache: false # set to false for hot refresh

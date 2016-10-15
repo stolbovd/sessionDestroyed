@@ -11,7 +11,7 @@ import java.io.IOException;
  */
 @Controller
 public class SseEmitterController {
-	@RequestMapping
+	@RequestMapping("/")
 	public String getPage() throws IOException, HTTPException {
 		return "sse";
 	}
