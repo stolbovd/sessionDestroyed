@@ -12,7 +12,7 @@ spring:
 #    add-mappings: true # if default mappings should be added
   thymeleaf:
     mode: HTML
-    cache: true # set to false for hot refresh
+    cache: false # set to false for hot refresh
   session:
     store-type: redis
   redis:

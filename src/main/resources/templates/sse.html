@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Server-Sent Events</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+</head>
+<body>
+	<h1>Server-Sent Events</h1>
+
+	<div class="input-group">
+		<span class="input-group-addon">сообщение:</span>
+		<input class="form-control" data-bind="value: message" placeholder="сообщение..."/>
+		<span class="input-group-btn">
+            <button class="btn btn-default" type="button" data-bind="enable: message().length>0, click: send">Отправить</button>
+		</span>
+      </span>
+	</div>
+	<p data-bind="text: sseContent"></p>
+</body>
+<script type="text/javascript" src="../static/plugins/jQuery/jquery-2.2.3.js" th:src="@{/plugins/jQuery/jquery-2.2.3.min.js}"></script>
+<script type="text/javascript" src="../static/plugins/knockout/knockout.debug.js" th:src="@{/plugins/knockout/knockout.js}"></script>
+<script type="text/javascript" src="../static/js/sse.js" th:src="@{/js/sse.js}"></script>
+<script>
+	var app;
+	$(document).ready(function() {
+		app = new AppModel();
+		ko.applyBindings(app);
+	})
+</script>
+</html>
